@@ -1,0 +1,79 @@
+.homepage__main-container {
+    padding-top: 75px;
+}
+
+.homepage__main-container h1 {
+    margin: 0px;
+}
+
+.homepage__main-container h2 {
+    margin: 0px;
+}
+
+.homepage__main-image-container {
+  position: relative;
+  text-align: center;
+  color: rgb(236, 235, 235);
+  overflow-x: hidden;
+}
+
+.homepage__main-image-container > h2 {
+    position: absolute;
+    top: 64px;
+    left: 82px;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.homepage__main-image-container > img {
+    width: 113%;
+    height: 460px;
+}
+
+.homepage__recently-added {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-right: 80px !important;
+    padding-left: 80px !important;
+}
+
+.homepage__spots-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 30px;
+
+}
+
+.homepage__spots-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-width: 0px 5px;
+    max-width: 25%;
+    flex: 0 0 25%;
+    text-decoration: none;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.homepage__spot-container {
+    padding: 0px 5px;
+}
+
+.homepage__spot-container span {
+    display: block;
+    font-size: 15px;
+}
+
+.homepage__spot-container img {
+    width: 220px;
+    height: 220px;
+    border-radius: 5px;
+
+}
+
+#homepage__spot-city {
+    font-weight: 700;
+}
