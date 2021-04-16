@@ -29,7 +29,6 @@ const addSpot = (spot) => {
 export const getSpots = () => async (dispatch) => {
     const response = await csrfFetch('/api/spots');
     const data = await response.json();
-    console.log(data.spots);
     dispatch(load(data.spots));
     return data;
 }
@@ -75,7 +74,6 @@ export const updateSpot = payload => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
-        // console.log(data);
         dispatch(addSpot(data.spot));
         return data;
     }

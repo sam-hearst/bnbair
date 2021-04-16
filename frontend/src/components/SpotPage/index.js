@@ -4,6 +4,7 @@ import { useParams, Redirect } from 'react-router-dom';
 import { getOneSpot } from '../../store/spots';
 import EditSpotForm from '../EditSpotForm/index';
 import MapContainer from '../MapContainer/MapContainer';
+import CalendarComponent from './CalendarComponent';
 import './SpotPage.css';
 require('dotenv').config();
 
@@ -59,7 +60,7 @@ function SpotPage() {
                             </div>
                         </div>
                         <div className="spot__map">
-                            <MapContainer latitude={spot.latitude} longitude={spot.longitude}/>
+                            <MapContainer latitude={spot.latitude} longitude={spot.longitude} />
                         </div>
                     </div>
                     <div className="spot__description">
@@ -93,7 +94,7 @@ function SpotPage() {
                         </div>
                     </div>
                     <div className="spot__map">
-                        <MapContainer latitude={spot.latitude} longitude={spot.longitude}/>
+                        <MapContainer latitude={spot.latitude} longitude={spot.longitude} />
                     </div>
                 </div>
                 <div className="spot__description">
@@ -104,7 +105,7 @@ function SpotPage() {
                     <h3>Price</h3>
                     <span>{`$${spot.pricePerNight}/ night`}</span>
                 </div>
-                <button className="spot__book-spot">Book this spot</button>
+                <CalendarComponent />
             </div>
         )
     }
