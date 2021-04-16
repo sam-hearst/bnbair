@@ -30,11 +30,11 @@ function HomePage() {
         <div className="homepage__main-container">
             <div className="homepage__main-image-container">
                 <img src="https://images.contentstack.io/v3/assets/bltfa2cefdbe7482368/blt94377b78a7244fe7/5f7391c98c3821496a602665/GoNear_NY_2580w.jpg" />
-                <h2>Explore</h2>
+                <h2>Discover</h2>
             </div>
             <div className="homepage__spots">
                 <div className="homepage__recently-added">
-                    <h2>Live Anywhere</h2>
+                    <h2>Explore Anywhere</h2>
                     <div className="homepage__spots-container">
                         {spotsArr.map((spot) => {
                             return (
