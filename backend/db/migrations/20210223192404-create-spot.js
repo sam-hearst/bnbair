@@ -17,6 +17,19 @@ module.exports = {
         allowNull: false,
         unique: true
       },
+      zipCode: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+      },
+      cityId: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          references: {
+              model: {
+                  tableName: "Cities"
+              }
+          }
+      },
       hostId: {
         type: Sequelize.INTEGER,
         allowNull: false,
