@@ -16,7 +16,7 @@ module.exports = {
             },
             {
                 name: "Tiny house on beach",
-                address: "5 Lumber Lane, Bridgehampton, NY 11932",
+                address: "5 Lumber Lane",
                 zipCode: 11932,
                 cityId: 2,
                 hostId: 2,

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import SpotPage from './components/SpotPage';
 import Navigation from './components/Navigation';
+import SpotsPage from "./components/SpotsPage"
 import { useDispatch } from 'react-redux';
 import * as sessionActions from './store/session';
 
@@ -23,6 +24,9 @@ function App() {
                 <Switch>
                     <Route exact path='/'>
                         <HomePage />
+                    </Route>
+                    <Route exact path="/cities/:cityName">
+                        <SpotsPage />
                     </Route>
                     <Route path='/spots/:id'>
                         <SpotPage />

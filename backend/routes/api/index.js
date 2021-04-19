@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const sessionRouter = require('./session');
 const usersRouter = require('./users');
-const spotsRouter = require('./spots'); 
+const spotsRouter = require('./spots');
+const citiesRouter = require('./cities')
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
 router.use('/spots', spotsRouter);
+
+router.use("/cities", citiesRouter);
 
 
 
