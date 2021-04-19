@@ -10,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             unique: true
         },
+        zipCode: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        cityId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         hostId: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -35,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
         // associations can be defined here
         Spot.belongsTo(models.User, { foreignKey: 'hostId'});
         Spot.hasMany(models.Media, { foreignKey: "spotId" });
+        Spot.belongsTo(models.City, { foreignKey: "cityId" })
     };
     return Spot;
 };
