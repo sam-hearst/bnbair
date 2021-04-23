@@ -1,0 +1,90 @@
+.city-page-container {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.city__spots-container {
+    margin-top: 40px;
+}
+
+.city-page__spots-container {
+    width: 50%;
+}
+
+.city__title {
+    margin-right: 0px;
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+.city__spot-container {
+    border-bottom: 1px solid var(--main-border);
+    border-top: 1px solid var(--main-border);
+}
+
+.city__spot-container > a {
+    text-decoration: none;
+    color: black;
+}
+
+.city-page__spot-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 30px;
+    position: relative;
+}
+
+
+.city-page__spot-img {
+    width: 230px;
+    height: 175px;
+}
+
+.city-page__spot-img > img {
+    border-radius: 20px;
+    width: 230px;
+    height: 175px
+}
+
+.city-page__spot-info {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.city-page__spot-info span {
+    text-decoration: none;
+    color: black;
+}
+
+span.city__spot-name {
+    font-weight: 550;
+    color: black;
+    padding-bottom: 10px;
+}
+
+span.city__spot-desc {
+    position: relative;
+    color: #212121;
+}
+
+span.city__spot-price {
+    position: absolute;
+    top: 170px;
+    right: 40px;
+}
+
+/* ______________________________________MAP CSS */
+
+.city__map {
+    width: 50%;
+    height: 100%;
+}

@@ -83,6 +83,14 @@ module.exports = {
                 spotId: 8,
                 imageUrl: "https://a0.muscache.com/im/pictures/8203e63e-d436-40ac-9683-feba561d675e.jpg?im_w=720"
             },
+            {
+                spotId: 9,
+                imageUrl: "https://a0.muscache.com/im/pictures/d2441d16-99e8-47fc-b69b-cf01ca5a1c22.jpg?im_w=720",
+            },
+            {
+                spotId: 9,
+                imageUrl: "https://a0.muscache.com/im/pictures/6de5ce76-28c1-4ba3-a415-26e7445adabc.jpg?im_w=720"
+            }
         ], {});
     },
 

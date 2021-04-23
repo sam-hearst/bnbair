@@ -13,6 +13,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false
     },
+    cityLat: {
+        type: DataTypes.NUMERIC(10, 5),
+        allowNull: false,
+    },
+    cityLong: {
+        type: DataTypes.NUMERIC(10, 5),
+        allowNull: false,
+    },
   }, {});
   City.associate = function(models) {
     // associations can be defined here

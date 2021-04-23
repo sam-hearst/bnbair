@@ -10,13 +10,13 @@ module.exports = {
                 cityId: 1,
                 hostId: 1,
                 pricePerNight: "79",
-                description: "Beautiful 2 bedroom apartment located in amazing San Diego.  Renters have access to a pool and gym!",
+                description: "Beautiful 2 bedroom apartment located in amazing Montauk.  Renters have access to a pool and gym!",
                 latitude: 32.7157,
                 longitude: -117.1610
             },
             {
                 name: "Tiny house on beach",
-                address: "5 Lumber Lane, Bridgehampton, NY 11932",
+                address: "5 Lumber Lane",
                 zipCode: 11932,
                 cityId: 2,
                 hostId: 2,
@@ -32,7 +32,7 @@ module.exports = {
                 cityId: 3,
                 hostId: 2,
                 pricePerNight: "100",
-                description: "Modern art-filled studio with polished cement floors right in the heart of downtown San Francisco. Conveniently located next to Whole Foods Market. The bay, ferry building, restaurants, and shopping are walking distance. The building has a beautiful rooftop patio with breath-taking views, plenty of seating and BBQ grills. Get ready to enjoy San Francisco like a local.",
+                description: "Modern art-filled studio with polished cement floors right in the heart of Garrison. Conveniently located next to Whole Foods Market. The bay, ferry building, restaurants, and shopping are walking distance. The building has a beautiful rooftop patio with breath-taking views, plenty of seating and BBQ grills. Get ready to enjoy Garrison like a local.",
                 latitude: 37.7739,
                 longitude: -122.4312
             },
@@ -65,7 +65,7 @@ module.exports = {
                 cityId: 6,
                 hostId: 4,
                 pricePerNight: "210",
-                description: "Single spot in a shared room located by Hollywood Walk of Fame in the middle of everything. Our place is perfect option for students, young professionals and travelers who wants to explore Hollywood. Quiet & safe location, short walk to grocery stores, cafes & coffee shops. House has 5 mixed gander rooms, each can fit 4-6 guests , full kitchen. Self Check-In & Self Check-Out. Check-In Time: 4 PM - 10 PM STRICT. Parking is for extra fee.",
+                description: "Single spot in a shared room located in Ithaca in the middle of everything. Our place is perfect option for students, young professionals and travelers who wants to explore Ithaca. Quiet & safe location, short walk to grocery stores, cafes & coffee shops. House has 5 mixed gander rooms, each can fit 4-6 guests , full kitchen. Self Check-In & Self Check-Out. Check-In Time: 4 PM - 10 PM STRICT. Parking is for extra fee.",
                 latitude: 34.052235,
                 longitude: -118.243683,
             },
@@ -90,7 +90,19 @@ module.exports = {
                 description: "Condo overlooking landscaped courtyard & water fountain. Spacious living & dining room. Amenities include: plantation shutters, ceiling fans, hardwood floors, designer colors, accent lighting & one assigned covered parking. Full size. Laundry Facility on the property. Wifi and Tv included. Great location to Knox Henderson restaurants & shops, SMU and the Katy Trail.",
                 latitude: 32.7791,
                 longitude: -96.8088
+            },
+            {
+                name: "Beautifully Furnished Home",
+                address: "4 Covey Ct",
+                zipCode: 11937,
+                cityId: 2,
+                hostId: 1,
+                pricePerNight: "205",
+                description: "House overlooking landscaped courtyard. Spacious living & dining room. Amenities include: ceiling fans, hardwood floors, designer colors, accent lighting & tons of parking. Full size. Wifi and Tv included. Great location to restaurants in EH.",
+                latitude: 40.9634,
+                longitude: -72.1847
             }
+
         ], {});
     },
 

@@ -1,18 +1,29 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import "./Map.css"
 require('dotenv').config();
 
 
-const MapContainer = (props) => {
-    const latitude = Number(props.latitude);
-    const longitude = Number(props.longitude);
+const MapContainer = ({ cityLat, cityLong, spotsArr }) => {
+
+    const locationsArr = spotsArr?.map((spot) => {
+        return {
+            name: spot.name,
+            location: {
+                lat: Number(spot.latitude),
+                lng: Number(spot.longitude)
+            }
+        }
+    })
+
+    console.log(locationsArr);
 
     const locations = [
         {
             name: "Location 1",
             location: {
-                lat: 41.3954,
-                lng: 2.162
+                lat: 40.96340,
+                lng: -72.18470
             },
         },
         {
@@ -46,12 +57,13 @@ const MapContainer = (props) => {
     ];
 
     const mapStyles = {
-        height: "50vh",
-        width: "100%"
+        height: "89%",
+        width: "50%",
+        position: "fixed !important"
     };
 
     const defaultCenter = {
-        lat: latitude, lng: longitude
+        lat: Number(cityLat), lng: Number(cityLong)
     }
 
 
@@ -60,11 +72,12 @@ const MapContainer = (props) => {
         <LoadScript
             googleMapsApiKey={process.env.REACT_APP_API_KEY_GOOGLE_MAPS}>
             <GoogleMap
+                id="map"
                 mapContainerStyle={mapStyles}
-                zoom={13}
+                zoom={11}
                 center={defaultCenter}>
                 {
-                    locations.map(item => {
+                    locationsArr && locationsArr.map(item => {
                         return (
                             <Marker key={item.name} position={item.location} />
                         )

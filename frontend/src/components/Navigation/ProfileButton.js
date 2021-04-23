@@ -10,9 +10,6 @@ function ProfileButton({ user }) {
     const openMenu = () => {
         if (showMenu) return;
         setShowMenu(true);
-
-
-        document.getElementById('navbar__user-info-btns').setAttribute('class', 'active'); // set a class that is only active when menu is open
     };
 
     useEffect(() => {
@@ -20,7 +17,6 @@ function ProfileButton({ user }) {
 
         const closeMenu = () => {
             setShowMenu(false);
-            document.getElementById('navbar__user-info-btns').removeAttribute('class');  // remove the class
         };
 
         document.addEventListener('click', closeMenu);
@@ -36,19 +32,24 @@ function ProfileButton({ user }) {
 
     return (
         <div>
-            <button onClick={openMenu}>
+            <div onClick={openMenu}>
                 <i className="far fa-user"></i>
-            </button>
-            {showMenu && (
-            <div>
-                <ul className="profile-dropdown">
-                    <li>{user.username}</li>
-                    <li>{user.email}</li>
-                    <li>
-                        <button onClick={logout}>Log Out</button>
-                    </li>
-                </ul>
             </div>
+            {showMenu && (
+                <div className="dropdown-container">
+                    <div>
+                        <div>Hi {user.username}!</div>
+                    </div>
+                    <div>
+                        <div>Host your home</div>
+                    </div>
+                    <div>
+                        <div>Account</div>
+                    </div>
+                    <div className="dropdown-container__logout">
+                        <div onClick={logout}>Log Out</div>
+                    </div>
+                </div>
             )}
         </div>
     );

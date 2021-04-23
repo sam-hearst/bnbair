@@ -1,29 +1,26 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getSpots } from '../../store/spots';
+import { getCities } from '../../store/cities';
 import './HomePage.css';
 
 function HomePage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const spots = useSelector((state) => {
-        return state.spots;
+    const cities = useSelector((state) => {
+        return state.cities;
     })
 
-    function convertAddress(address) {
-        const piecesAddress = address.split(', ');
-        const city = piecesAddress[1]
-        const stateZip = piecesAddress[2];
-        const state = stateZip.split(' ');
-        return (`${city}, ${state[0]}`);
+    function convertCityName(city) {
+        const altered = city?.split(' ').join("-").toLowerCase();
+        return (`${altered}`);
     }
 
 
-    const spotsArr = Object.values(spots);
+    const citiesArr = Object.values(cities);
 
     useEffect(() => {
-        dispatch(getSpots());
+        dispatch(getCities());
     }, [dispatch]);
 
     return (
@@ -34,23 +31,22 @@ function HomePage() {
             </div>
             <div className="homepage__spots">
                 <div className="homepage__recently-added">
-                    <h2>Explore Anywhere</h2>
+                    <h2>Explore NY</h2>
                     <div className="homepage__spots-container">
-                        {spotsArr.map((spot) => {
+                        {citiesArr && citiesArr.map((city) => {
                             return (
-                                <Link key={spot.id} to={`spots/${spot.id}`}>
-                                    <div key={spot.id} className="homepage__spot-container">
-                                        {spot.Media && <img src={spot.Media[0].imageUrl} />}
-                                        <span>{spot.name}</span>
-                                        <span id="homepage__spot-city">{convertAddress(spot.address)}</span>
-                                    </div>
-                                </Link>
+                                <div key={city.id} className="homepage__spot-container">
+                                    <Link to={`/cities/${convertCityName(city?.name)}`}>
+                                        {city.cityImgUrl && <img src={city.cityImgUrl} />}
+                                        <span>{city.name}</span>
+                                    </Link>
+                                </div>
                             )
                         })}
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
