@@ -12,7 +12,7 @@ function HomePage() {
     })
 
     function convertCityName(city) {
-        const altered = city.split(' ').join("-").toLowerCase();
+        const altered = city?.split(' ').join("-").toLowerCase();
         return (`${altered}`);
     }
 
@@ -35,18 +35,18 @@ function HomePage() {
                     <div className="homepage__spots-container">
                         {citiesArr && citiesArr.map((city) => {
                             return (
-                                <Link key={city.id} to={`/cities/${convertCityName(city.name)}`}>
-                                    <div className="homepage__spot-container">
+                                <div key={city.id} className="homepage__spot-container">
+                                    <Link to={`/cities/${convertCityName(city?.name)}`}>
                                         {city.cityImgUrl && <img src={city.cityImgUrl} />}
                                         <span>{city.name}</span>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                </div>
                             )
                         })}
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

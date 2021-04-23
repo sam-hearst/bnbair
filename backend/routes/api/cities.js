@@ -4,6 +4,7 @@ const db = require('../../db/models');
 
 const City = db.City;
 const Spot = db.Spot;
+const Media = db.Media;
 
 const router = express.Router();
 
@@ -40,7 +41,10 @@ router.get("/:cityName", asyncHandler( async (req, res) => {
         where: {
             name: altered
         },
-        include: Spot
+        include: {
+            model: Spot,
+            include: Media
+        }
     })
 
     res.json({ city: city })

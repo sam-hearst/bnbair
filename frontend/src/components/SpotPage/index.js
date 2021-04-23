@@ -59,9 +59,6 @@ function SpotPage() {
                                 })}
                             </div>
                         </div>
-                        <div className="spot__map">
-                            <MapContainer latitude={spot.latitude} longitude={spot.longitude} />
-                        </div>
                     </div>
                     <div className="spot__description">
                         <h3>Description</h3>
@@ -92,9 +89,6 @@ function SpotPage() {
                                 )
                             })}
                         </div>
-                    </div>
-                    <div className="spot__map">
-                        <MapContainer latitude={spot.latitude} longitude={spot.longitude} />
                     </div>
                 </div>
                 <div className="spot__description">
