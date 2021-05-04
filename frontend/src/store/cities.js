@@ -19,7 +19,6 @@ const loadCity = (city) => {
 }
 
 export const getCities = () => async (dispatch) => {
-    console.log("hitting the get cities route!!")
     const response = await csrfFetch('/api/cities');
     const data = await response.json();
     dispatch(loadCities(data.cities));
@@ -27,7 +26,6 @@ export const getCities = () => async (dispatch) => {
 }
 
 export const getOneCity = (cityName) => async (dispatch) => {
-    console.log("hitting the get CITY route!!");
     const response = await csrfFetch(`/api/cities/${cityName}`);
 
     if (response.ok) {

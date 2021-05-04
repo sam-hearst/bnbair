@@ -41,7 +41,10 @@ function ProfileButton({ user }) {
                         <div>Hi {user.username}!</div>
                     </div>
                     <div>
-                        <div>Host your home</div>
+                        <div>Your reservations</div>
+                    </div>
+                    <div>
+                        <div>Your spots</div>
                     </div>
                     <div>
                         <div>Account</div>
@@ -52,7 +55,7 @@ function ProfileButton({ user }) {
                 </div>
             )}
         </div>
-    );
+    )
 }
 
 export default ProfileButton;

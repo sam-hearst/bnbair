@@ -32,10 +32,9 @@
 #signup__form input {
     width: 100% !important;
     outline: none !important;
-    padding: 0px !important;
+    padding-left: 12px;
     margin: 10px 0px !important;
     min-height: 1px !important;
-    color: rgb(113, 113, 113);
     background-color: transparent !important;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
     font-size: 20px !important;

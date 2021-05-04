@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import "./Map.css"
 require('dotenv').config();
 
@@ -69,22 +69,19 @@ const MapContainer = ({ cityLat, cityLong, spotsArr }) => {
 
 
     return (
-        <LoadScript
-            googleMapsApiKey={process.env.REACT_APP_API_KEY_GOOGLE_MAPS}>
-            <GoogleMap
-                id="map"
-                mapContainerStyle={mapStyles}
-                zoom={11}
-                center={defaultCenter}>
-                {
-                    locationsArr && locationsArr.map(item => {
-                        return (
-                            <Marker key={item.name} position={item.location} />
-                        )
-                    })
-                }
-            </GoogleMap>
-        </LoadScript>
+        <GoogleMap
+            id="map"
+            mapContainerStyle={mapStyles}
+            zoom={11}
+            center={defaultCenter}>
+            {
+                locationsArr && locationsArr.map(item => {
+                    return (
+                        <Marker key={item.name} position={item.location} />
+                    )
+                })
+            }
+        </GoogleMap>
     )
 }
 

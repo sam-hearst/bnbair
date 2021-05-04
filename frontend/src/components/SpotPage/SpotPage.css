@@ -1,22 +1,15 @@
-.spot__page-container {
-    display: flex;
-    flex-direction: row;
+.spot-container {
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
- .spot__name-img-map-container {
+
+
+ .spot__name-container {
      display: flex;
      flex-direction: row;
      height: 380px;
  }
-
-.spot__name-img {
-    width: 70%;
-}
-
-.spot__map {
-    width: 30%;
-    box-sizing: border-box;
-    padding-top: 75px;
-}
 
 .spot__name {
     padding-top: 80px;
@@ -28,9 +21,6 @@
     flex-wrap: wrap;
     width: 100%;
     box-sizing: border-box;
-    padding-left: 40px;
-    /* padding-right: 40px; */
-    /* border: 1px solid black; */
     height: 236px;
 }
 
