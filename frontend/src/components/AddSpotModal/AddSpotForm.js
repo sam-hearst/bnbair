@@ -4,7 +4,7 @@ import AddressSearch from "./AddressSearch"
 import { useDispatch, useSelector } from "react-redux";
 import { createSpot } from '../../store/spots';
 
-function AddSpotForm() {
+function AddSpotForm({ setShowModal }) {
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
@@ -35,6 +35,7 @@ function AddSpotForm() {
         }
 
         await dispatch(createSpot(payload));
+        setShowModal(false); 
         history.push('/');
 
         setName('');

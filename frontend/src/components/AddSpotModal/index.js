@@ -10,7 +10,7 @@ function AddSpotFormModal() {
             <div onClick={() => setShowModal(true)}>Add a spot</div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <AddSpotForm />
+                    <AddSpotForm setShowModal={setShowModal}/>
                 </Modal>
             )}
         </>

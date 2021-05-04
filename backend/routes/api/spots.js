@@ -60,19 +60,23 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async (req, res) => {
             "https://a0.muscache.com/im/pictures/08b33515-49eb-4b9b-8e60-f962fb7e700b.jpg?im_q=medq&im_w=720",
             "https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=720",
             "https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=720",
-                                    ]
+        ]
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        let idx = getRandomInt(randomCityImgUrls.length); 
+        console.log("idx", idx);
 
         rightCity = await City.create({
             name: city,
-            cityImgUrl: randomCityImgUrls[Math.floor(Math.random() * randomCityImgUrls.length + 1)],
+            cityImgUrl: randomCityImgUrls[idx],
             state: "New York",
             cityLat: cityLat,
             cityLong: cityLong,
         })
     }
-
-    console.log(rightCity);
-
     const spot = await Spot.create({
         name,
         address: address.split(", ")[0],
@@ -94,7 +98,9 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async (req, res) => {
         include: Media
     });
 
-
+    if (!isCity.length) { // if its a new city... must return city and spot
+        return res.json({ newSpot, city: rightCity })
+    }
     res.json({ newSpot });
 }))
 
