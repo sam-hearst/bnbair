@@ -3,6 +3,7 @@ const sessionRouter = require('./session');
 const usersRouter = require('./users');
 const spotsRouter = require('./spots');
 const citiesRouter = require('./cities')
+const bookingsRouter = require("./bookings");
 
 router.use('/session', sessionRouter);
 
@@ -11,6 +12,8 @@ router.use('/users', usersRouter);
 router.use('/spots', spotsRouter);
 
 router.use("/cities", citiesRouter);
+
+router.use("/bookings", bookingsRouter); 
 
 
 

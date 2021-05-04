@@ -1,8 +1,9 @@
 import { csrfFetch } from './csrf';
 
 
-export const LOAD_CITIES = 'cities/GET_CITIES';
-export const LOAD_CITY = 'city/GET_CITY';
+const LOAD_CITIES = 'cities/GET_CITIES';
+const LOAD_CITY = 'city/GET_CITY';
+const ADD_CITY = "city/ADD_CITY"
 
 const loadCities = (cities) => {
     return {
@@ -14,6 +15,13 @@ const loadCities = (cities) => {
 const loadCity = (city) => {
     return {
         type: LOAD_CITY,
+        payload: city
+    }
+}
+
+export const addOneCity = (city) => {
+    return {
+        type: ADD_CITY,
         payload: city
     }
 }
@@ -35,6 +43,7 @@ export const getOneCity = (cityName) => async (dispatch) => {
     }
 }
 
+
 const initialState = {};
 
 const citiesReducer = (state = initialState, action) => {
@@ -49,6 +58,11 @@ const citiesReducer = (state = initialState, action) => {
         }
         case LOAD_CITY: {
             newState = {...action.payload};
+            return newState;
+        }
+        case ADD_CITY: {
+            newState = Object.assign({}, state, { [action.payload.id]: action.payload })
+
             return newState;
         }
         default:

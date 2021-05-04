@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 
-function CalendarComponent() {
-    const [value, onChange] = useState(new Date());
-    console.log(value);
+function CalendarComponent({ value, onChange}) {
+
+
 
     return (
         <>
@@ -14,7 +14,6 @@ function CalendarComponent() {
                 selectRange={true}
                 minDate={new Date()}
             />
-            <button className="spot__book-spot">Check availability</button>
         </>
     )
 }

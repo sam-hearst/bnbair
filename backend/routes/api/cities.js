@@ -13,7 +13,7 @@ router.get('/', asyncHandler(async (req, res) => {
     console.log("hitting the get cities backend!!")
 
     const cities = await City.findAll({
-        limit: 8
+        limit: 12
     });
 
     res.json({ cities: cities })

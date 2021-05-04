@@ -1,4 +1,5 @@
 import { csrfFetch } from './csrf';
+import { addOneCity } from "./cities"
 
 
 export const LOAD_SPOTS = 'spots/GET_SPOTS';
@@ -44,7 +45,6 @@ export const getOneSpot = (id) => async (dispatch) => {
 export const createSpot = payload => async (dispatch) => {
     console.log("hitting create spot route");
     const { name, address, city, zipCode, latLng, userId, pricePerNight, description, image } = payload;
-    console.log(latLng.lat);
 
     const formData = new FormData();
     formData.append('name', name);
@@ -68,9 +68,15 @@ export const createSpot = payload => async (dispatch) => {
         body: formData
     });
 
-    const data = await response.json();
-    dispatch(addSpot(data.newSpot));
-    return data;
+    if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        dispatch(addSpot(data.newSpot));
+        if (data.city) {
+            dispatch(addOneCity(data.city));
+        }
+        return data;
+    }
 }
 
 export const updateSpot = payload => async (dispatch) => {
