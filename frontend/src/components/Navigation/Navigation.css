@@ -94,6 +94,16 @@
     flex-direction: row;
 }
 
+#navbar__user-info-btns > div {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#navbar__user-info-btns > div:hover {
+    cursor: pointer;
+    background-color: var(--main-hover);
+}
+
 .active#navbar__user-info-btns {
     box-sizing: border-box;
     padding-top: 90px;

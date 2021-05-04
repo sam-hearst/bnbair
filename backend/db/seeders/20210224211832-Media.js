@@ -90,6 +90,10 @@ module.exports = {
             {
                 spotId: 9,
                 imageUrl: "https://a0.muscache.com/im/pictures/6de5ce76-28c1-4ba3-a415-26e7445adabc.jpg?im_w=720"
+            },
+            {
+                spotId: 10,
+                imageUrl: "https://a0.muscache.com/im/pictures/f4b3fc05-fd25-4e54-9297-501c2706c674.jpg?im_w=720"
             }
         ], {});
     },

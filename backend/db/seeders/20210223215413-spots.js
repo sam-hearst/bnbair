@@ -101,8 +101,18 @@ module.exports = {
                 description: "House overlooking landscaped courtyard. Spacious living & dining room. Amenities include: ceiling fans, hardwood floors, designer colors, accent lighting & tons of parking. Full size. Wifi and Tv included. Great location to restaurants in EH.",
                 latitude: 40.9634,
                 longitude: -72.1847
+            },
+            {
+                name: "Amazing home",
+                address: "73 Chapman Rd",
+                zipCode: 10524,
+                cityId: 3,
+                hostId: 1,
+                pricePerNight: "335",
+                description: "House in garrison on a great property.  Spacious rooms and right off indian lake.  Great for a family or two-person stay. House has beautiful views and great places to explore!",
+                latitude: 41.382150,
+                longitude: -73.883810
             }
-
         ], {});
     },
 

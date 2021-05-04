@@ -4,16 +4,17 @@
     --main-background: #fff;
     --main-border: #EBEBEB;
     --main-padding: 20px;
-    --main-color: #0870c5;
+    --main-color: rgb(255, 90, 95);
     --main-second-txt-color: #212121;
     --main-gray: rgba(224, 224, 224, 0.493);
+    --main-hover: rgba(179, 69, 72, 0.32);
 
     --page-title: 30px;
 
     --sidebar-background: #f6f7f8;
     --icon-color: rgb(78, 78, 78);
 
-    font-family: "Capsule Sans Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 * {

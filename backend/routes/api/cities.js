@@ -12,7 +12,9 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req, res) => {
     console.log("hitting the get cities backend!!")
 
-    const cities = await City.findAll();
+    const cities = await City.findAll({
+        limit: 8
+    });
 
     res.json({ cities: cities })
 }))
