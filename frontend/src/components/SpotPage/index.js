@@ -59,14 +59,18 @@ function SpotPage() {
             <div className="spot__title">
                 <h2>{`${spot?.name} in ${spot?.City.name}`}</h2>
             </div>
-            <div className="spot__images">
-                {spot.Media && spot.Media.map((image) => {
-                    return (
-                        <div key={image.id} className="spot__image">
-                            <img src={image.imageUrl} />
-                        </div>
-                    )
-                })}
+            <div className="spot-images-container">
+                <div className="spot__image-main">
+                    <img src={spot?.Media[0]?.imageUrl} />
+                </div>
+                <div className="spot-images">
+                    <div className="spot__image-2">
+                        <img src={spot?.Media[1]?.imageUrl} />
+                    </div>
+                    <div className="spot__image-3">
+                        <img src={spot?.Media[2]?.imageUrl} />
+                    </div>
+                </div>
             </div>
             <div className="user-info">
                 <span>Spot hosted by {sessionUser?.username}</span>
@@ -99,7 +103,7 @@ function SpotPage() {
                             Confirm Booking
                         </button>
                     )}
-                    {showCalendar && <CalendarComponent onChange={onChange} value={value}/>}
+                    {showCalendar && <CalendarComponent onChange={onChange} value={value} />}
                     <div className="close-cal" onClick={closeMenu}>{showCalendar ? `Close` : ''}</div>
                 </div>
             </div>
