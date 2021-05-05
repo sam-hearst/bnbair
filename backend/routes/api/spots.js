@@ -33,8 +33,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 router.post('/', singleMulterUpload("image"), asyncHandler(async (req, res) => {
-    console.log('req.body', req.body);
-    console.log('req.file', req.file);
     const { name, address, city, zipCode, latitude, longitude, userId, pricePerNight, description } = req.body;
     const imgUrl = await singlePublicFileUpload(req.file);
 
@@ -66,8 +64,7 @@ router.post('/', singleMulterUpload("image"), asyncHandler(async (req, res) => {
             return Math.floor(Math.random() * max);
         }
 
-        let idx = getRandomInt(randomCityImgUrls.length); 
-        console.log("idx", idx);
+        let idx = getRandomInt(randomCityImgUrls.length);
 
         rightCity = await City.create({
             name: city,

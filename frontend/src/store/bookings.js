@@ -44,7 +44,6 @@ export const getOneBooking = (bookingId) => async (dispatch) => {
 
 
 export const createBooking = (payload) => async (dispatch) => {
-    console.log("hitting the create booking route!!", payload);
     const response = await csrfFetch('/api/bookings/', {
         method: 'POST',
         body: JSON.stringify(payload)
@@ -52,7 +51,6 @@ export const createBooking = (payload) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
-        console.log(data);
         dispatch(bookASpot(data.booking));
         return data;
     }

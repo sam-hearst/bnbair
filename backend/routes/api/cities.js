@@ -10,7 +10,6 @@ const router = express.Router();
 
 
 router.get('/', asyncHandler(async (req, res) => {
-    console.log("hitting the get cities backend!!")
 
     const cities = await City.findAll({
         limit: 12
@@ -20,7 +19,6 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 router.get("/:cityName", asyncHandler( async (req, res) => {
-    console.log("hitting the get city backend!!")
 
     const { cityName } = req.params
     const alteredArr = cityName.split("-");

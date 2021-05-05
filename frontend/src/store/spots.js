@@ -43,7 +43,6 @@ export const getOneSpot = (id) => async (dispatch) => {
 }
 
 export const createSpot = payload => async (dispatch) => {
-    console.log("hitting create spot route");
     const { name, address, city, zipCode, latLng, userId, pricePerNight, description, image } = payload;
 
     const formData = new FormData();
@@ -70,7 +69,6 @@ export const createSpot = payload => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
-        console.log(data);
         dispatch(addSpot(data.newSpot));
         if (data.city) {
             dispatch(addOneCity(data.city));
