@@ -31,14 +31,16 @@ function HomePage() {
             </div>
             <div className="homepage__spots">
                 <div className="homepage__recently-added">
-                    <h2>Explore NY</h2>
+                    <h2>Explore Nearby</h2>
                     <div className="homepage__spots-container">
                         {citiesArr && citiesArr.map((city) => {
                             return (
                                 <div key={city.id} className="homepage__spot-container">
                                     <Link to={`/cities/${convertCityName(city?.name)}`}>
                                         {city.cityImgUrl && <img src={city.cityImgUrl} />}
-                                        <span>{city.name}</span>
+                                        <div>
+                                            <span>{city.name}</span>
+                                        </div>
                                     </Link>
                                 </div>
                             )
