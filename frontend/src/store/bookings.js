@@ -1,8 +1,8 @@
 import { csrfFetch } from './csrf';
 
-export const LOAD_BOOKINGS = 'spots/GET_SPOTS';
-export const LOAD_BOOKING = 'spot/GET_SPOT';
-export const ADD_BOOKING = 'spot/ADD_SPOT';
+export const LOAD_BOOKINGS = 'spots/GET_BOOKINGs';
+export const LOAD_BOOKING = 'spot/GET_BOOKING';
+export const ADD_BOOKING = 'spot/ADD_BOOKING';
 
 const loadBookings = (bookings) => {
     return {
@@ -52,7 +52,7 @@ export const createBooking = (payload) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
-        console.log(data); 
+        console.log(data);
         dispatch(bookASpot(data.booking));
         return data;
     }
@@ -81,7 +81,6 @@ const bookingsReducer = (state = initialState, action) => {
         }
         case ADD_BOOKING: {
             newState = Object.assign({}, state, { [action.payload.id]: action.payload })
-
             return newState;
         }
         default:

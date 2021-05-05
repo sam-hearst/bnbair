@@ -114,7 +114,6 @@ const spotsReducer = (state = initialState, action) => {
         }
         case ADD_SPOT: {
             newState = Object.assign({}, state, { [action.payload.id]: action.payload })
-
             return newState;
         }
         default:

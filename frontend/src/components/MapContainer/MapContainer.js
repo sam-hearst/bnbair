@@ -16,8 +16,6 @@ const MapContainer = ({ cityLat, cityLong, spotsArr }) => {
         }
     })
 
-    console.log(locationsArr);
-
     const locations = [
         {
             name: "Location 1",
@@ -66,9 +64,13 @@ const MapContainer = ({ cityLat, cityLong, spotsArr }) => {
         lat: Number(cityLat), lng: Number(cityLong)
     }
 
+    if (!locationsArr) {
+        return null
+    }
 
 
-    return (
+
+    return locationsArr && (
         <GoogleMap
             id="map"
             mapContainerStyle={mapStyles}

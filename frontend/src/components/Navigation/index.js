@@ -6,6 +6,7 @@ import SignupFormModal from '../SignupFormModal/index';
 import AddSpotFormModal from '../AddSpotModal/index';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import SearchBar from './SearchBar';
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -42,10 +43,7 @@ function Navigation({ isLoaded }) {
                 </NavLink>
             </div>
             <div className="navbar__searchbar">
-                <div id="navbar__search-input">
-                    <i className="fas fa-search"></i>
-                    <input className="search-bar__text" type="text" placeholder="search" name="searchBar" id="searchBar"></input>
-                </div>
+                < SearchBar />
             </div>
             <div className="navbar__user-info">
                 {isLoaded && sessionLinks}
