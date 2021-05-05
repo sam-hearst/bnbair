@@ -73,7 +73,7 @@ function SpotPage() {
                 </div>
             </div>
             <div className="user-info">
-                <span>Spot hosted by {sessionUser?.username}</span>
+                <span>Spot hosted by {spot?.User?.username}</span>
             </div>
             <div className="spot-info-bookings-container">
                 <div className="spot-info">

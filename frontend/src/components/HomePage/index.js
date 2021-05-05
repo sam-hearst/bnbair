@@ -33,9 +33,9 @@ function HomePage() {
                 <div className="homepage__recently-added">
                     <h2>Explore Nearby</h2>
                     <div className="homepage__spots-container">
-                        {citiesArr && citiesArr.map((city) => {
+                        {citiesArr && citiesArr.map((city, i) => {
                             return (
-                                <div key={city.id} className="homepage__spot-container">
+                                <div key={i} className="homepage__spot-container">
                                     <Link to={`/cities/${convertCityName(city?.name)}`}>
                                         {city.cityImgUrl && <img src={city.cityImgUrl} />}
                                         <div>
