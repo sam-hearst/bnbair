@@ -34,7 +34,6 @@ function LoginForm() {
     }
 
     const handleDemoSubmit = async () => {
-        console.log("hitting handleDemoSubmit")
         await dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }));
 
         history.push("/");

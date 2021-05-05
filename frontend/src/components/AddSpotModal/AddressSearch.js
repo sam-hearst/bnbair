@@ -14,8 +14,6 @@ function AddressSearch({ setAddress, address, setLatLng }) {
     async function handleSelect(address) {
         const results = await geocodeByAddress(address);
         const latLng = await getLatLng(results[0]);
-        console.log(results[0]);
-        console.log(latLng); 
         setAddress(results[0].formatted_address);
         setLatLng(latLng)
         return
