@@ -100,52 +100,72 @@ const singlePublicFileUpload = async (file) => {
 
 1. Clone this repository (only this branch)
 
-   ```bash
-   git clone https://github.com/sam-hearst/bnbair.git
-   ```
+```bash
+git clone https://github.com/sam-hearst/bnbair.git
+```
 
 2. cd into frontend folder and run npm install and npm start
 
-    ```bash
-    cd frontend
-    ```
+```bash
+cd frontend
+```
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
-    ```bash
-    npm start
-    ```
+```bash
+npm start
+```
 
 3.  open new terminal and cd into backend folder
 
-    ```bash
-    cd backend
-    ```
+```bash
+cd backend
+```
 
-4.  Create .env file in backend and fill to look like .env.example (need AWS S3)
+4. Create a **.env** file based on the example with proper settings for your
+development environment
 
-    ```
-    PORT=
-    DB_USERNAME=
-    DB_PASSWORD=
-    DB_DATABASE=
-    DB_HOST=localhost
-    JWT_SECRET=
-    JWT_EXPIRES_IN=604800
-    AWS_ACCESS_KEY_ID=
-    AWS_SECRET_ACCESS_KEY=
-    ```
+```
+PORT=
+DB_USERNAME=
+DB_PASSWORD=
+DB_DATABASE=
+DB_HOST=localhost
+JWT_SECRET=
+JWT_EXPIRES_IN=604800
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+```
 
-5. Run npm install and npm start
+5. Setup your PostgreSQL user, and password and then run sequelize commands
 
-    ```bash
-    npm install
-    ```
+```bash
+npx dotenv sequelize-cli init
+```
 
-    ```bash
-    npm start
-    ```
+```bash
+npx dotenv sequelize-cli db:create
+```
 
-6.  Navigate to localhost:3000
+```bash
+npx dotenv sequelize-cli db:migrate
+```
+
+```bash
+npx dotenv sequelize-cli db:seed:all
+```
+
+
+6. Run npm install and npm start
+
+```bash
+npm install
+```
+
+```bash
+npm start
+```
+
+7.  Navigate to localhost:3000
